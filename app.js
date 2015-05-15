@@ -18,7 +18,7 @@ angular
       $urlRouterProvider.otherwise('/')
       $stateProvider
         .state('home', {
-          url: '/',
+          url: '/lunatone/',
           templateUrl: templateApp('app.html'),
           controller: 'AppCtrl'
         })
