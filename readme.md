@@ -5,6 +5,12 @@ Lunatone
 
 Example app using node.js, angular, socketio and d3.
 
+Screenshots
+===
+
+![](screenshot/home.png)
+![](screenshot/posts.png)
+
 Usage
 ===
 
