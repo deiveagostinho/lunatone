@@ -17,7 +17,7 @@ var go = R.curry(function (state, url, id) {
 // Template Path Generation
 
 var templateUrl = R.curry(function (path, file) {
-  return path + file
+  return "http://jugoncalv.es" + path + file
 })
 
 var templateApp = templateUrl('/lunatone/')
