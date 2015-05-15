@@ -4,7 +4,7 @@ var save            = require('save')
   , maybeRespond    = utils.maybeRespond
   , data            = require('../data/reach.json')
 
-var Reach = save('Reach', {idProperty: 'id'})
+var Reach = save('Reach', {idProperty: 'id', debug: false})
 
 function getList (req, res) {
   var response = null

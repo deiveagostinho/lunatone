@@ -3,7 +3,7 @@ var save            = require('save')
   , utils           = require('./utils')
   , maybeRespond    = utils.maybeRespond
 
-var Post = save('Post', {idProperty: 'id'})
+var Post = save('Post', {idProperty: 'id', debug: false})
 
 function create (req, res) {
   var response = null

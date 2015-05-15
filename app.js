@@ -3,10 +3,10 @@ var express       = require('express')
   , http          = require('http').Server(app)
   , io            = require('socket.io')(http)
   , routes        = require('./server/routes')
+  , port          = process.env.PORT || 3000
 
 require('./server/socket')(io)
 
-app.set('port', process.env.PORT || 3000)
 app.use(routes)
 app.use('/app', express.static('client/src'))
 app.use('/bower', express.static('client/bower_components'))
@@ -28,4 +28,4 @@ app.get('*', function (req, res) {
   })
 })
 
-http.listen(3000)
+http.listen(port)
