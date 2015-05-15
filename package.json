@@ -1,0 +1,20 @@
+{
+  "name": "lunatone",
+  "version": "1.0.0",
+  "description": "example app using node.js, angular, socketio and d3.",
+  "main": "app.js",
+  "scripts": {
+    "build:css": "lessc less/app.less --semantic-ui > src/css/app.css"
+  },
+  "author": "Ju Gonçalves <code@jugoncalv.es>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "express": "^4.12.3",
+    "express-spa-router": "0.0.8",
+    "faker": "^2.1.2",
+    "multer": "^0.1.8",
+    "ramda": "^0.13.0",
+    "save": "^2.1.0"
+  }
+}
