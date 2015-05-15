@@ -4,10 +4,10 @@ var express       = require('express')
   , http          = require('http').Server(app)
   , io            = require('socket.io')(http)
   , routes        = require('./routes')
+  , port          = process.env.PORT || 3000
 
 require('./socket')(io)
 app.use(cors())
-app.set('port', (process.env.PORT || 3000))
 app.use(routes)
 
-app.listen(app.get('port'))
+http.listen(port)
