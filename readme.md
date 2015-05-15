@@ -1,4 +1,4 @@
-![](http://bulbapedia.bulbagarden.net/wiki/File:337Lunatone.png)
+![](http://cdn.bulbagarden.net/upload/e/eb/337Lunatone.png)
 
 Lunatone
 ---
