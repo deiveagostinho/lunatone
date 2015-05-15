@@ -1,0 +1,205 @@
+@blue : #28A4D1;
+@red  : #E33569;
+
+body {
+  background-color: white;
+}
+
+h1.ui.header {
+  text-transform: uppercase;
+  font-size: 6em;
+  margin-bottom: 0;
+  text-shadow: 5px 5px 0 black;
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 400;
+  text-shadow: 1px 1px 0 black;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+.ui.grid > .row > .blue.column,
+.ui.blue.button,
+.ui.blue.labels .label,
+.ui.blue.label  {
+  background-color: @blue !important;
+}
+
+.ui.grid > .row > .red.column,
+.ui.red.button,
+.ui.red.labels .label,
+.ui.red.label  {
+  background-color: @red !important;
+}
+
+.ui.button {
+  margin-bottom: 10px;
+}
+
+.ui.card {
+  display: inline-block;
+}
+
+.ui.error.message .header,
+.ui.error.message {
+  background-color: #FCFFE8;
+  color: @red;
+}
+
+.lunatone-app {
+  height: calc(100%)
+}
+
+.lunatone-headline {
+  height: calc(70%);
+  background: url("../img/bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.lunatone-header {
+  background: url("../img/bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.lunatone-list {
+  display: inline-block;
+  width: 80%;
+}
+
+.lunatone-bg-img {
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+[ui-sref]{
+  cursor: pointer;
+  &:hover{
+    opacity: .8;
+  }
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.ui.card {
+  min-height: 431px;
+}
+
+.ui.form input:not([type]),
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="email"],
+.ui.form input[type="number"],
+.ui.form input[type="password"],
+.ui.form input[type="search"],
+.ui.form input[type="tel"],
+.ui.form input[type="time"],
+.ui.form input[type="text"],
+.ui.form input[type="url"] {
+  padding: 0;
+  border: none;
+}
+
+.ui.form input:not([type]):focus,
+.ui.form input[type="date"]:focus,
+.ui.form input[type="datetime-local"]:focus,
+.ui.form input[type="email"]:focus,
+.ui.form input[type="number"]:focus,
+.ui.form input[type="password"]:focus,
+.ui.form input[type="search"]:focus,
+.ui.form input[type="tel"]:focus,
+.ui.form input[type="time"]:focus,
+.ui.form input[type="text"]:focus,
+.ui.form input[type="url"]:focus {
+  color: rgba(0, 0, 0, 0.85);
+  border: nome;
+  box-shadow: none;
+}
+
+.ui.textarea,
+.ui.form textarea {
+  border: 1px solid rgba(39, 41, 43, 0.3);
+  border-radius: 0;
+  border-left-width: 2px; 
+  border-bottom-width: 2px; 
+  resize: none;
+}
+
+.ui-select-choices {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.85);
+
+  .ui-select-choices-row {
+    padding: 5px;
+    &:hover{
+      background-color: @red;
+      color: white;
+    }
+  }
+}
+
+.ui.form input.lunatone-input,
+.ui-select-container {
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(39, 41, 43, 0.3);
+  border-radius: 0em;
+  background: #ffffff;
+  border-left-width: 2px; 
+  border-bottom-width: 2px; 
+}
+
+.ui-select-match-close {
+  font-size: 1.1em !important;
+  position: relative;
+  top: 2px;
+  color: @red;
+}
+
+a.ui-select-choices-row-inner {
+  padding: 0;
+  &:hover {
+    background-color: none;
+  }
+}
+
+.ui-select-choices-row .active > a,
+.ui-select-bootstrap .ui-select-choices-row > a,
+.ui-select-bootstrap .ui-select-choices-row.active > a {
+  background-color: none;
+  padding: 0;
+  &:hover {
+    background-color: none;
+  }
+}
+
+.deckgrid[deckgrid]::before {
+    /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
+    content: '4 .column.column-1-4';
+    font-size: 0; /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
+    visibility: hidden;
+}
+
+.deckgrid .column {
+    float: left;
+}
+
+.deckgrid .column-1-4 {
+    width: 25%;
+}

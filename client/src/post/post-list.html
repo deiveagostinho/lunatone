@@ -1,0 +1,30 @@
+<div class="column centered row">
+  <button ui-sref="post.add" class="ui blue button">Add New Post</button>
+  <button ui-sref="home" class="ui red button">Back to Home</button>
+</div>
+
+<div class="four wide column" ng-show="posts.length === 0">
+  <div class="ui segment">
+    <div class="content">
+      <h3 class="header">Ooops, no publications yet.</h3>
+    </div>
+  </div>
+</div>
+<div class="four wide column" ng-repeat="post in posts">
+  <div class="ui card" ui-sref="post.detail({id:post.id})">
+    <div class="extra content" ng-show="post.published">
+      <span class="right floated created">Published</span>
+    </div>
+    <div class="image dimmable" ng-show="post.image">
+      <div class="lunatone-bg-img" style="background-image: url({{post.image}});"></div>
+    </div>
+    <div class="content">
+      <h3 class="header">{{post.message}}</h3>
+      <div class="meta">
+        <span ng-repeat="tag in post.tags">{{tag}}</span>
+        <a class="group"></a>
+      </div>
+      <p class="description">{{post.network}}</p>
+    </div>
+  </div>
+</div>

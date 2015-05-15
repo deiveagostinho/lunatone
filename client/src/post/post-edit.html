@@ -1,0 +1,86 @@
+<div class="column centered row">
+  <button ui-sref="post.list" class="ui red button">Back</button>
+  <button ng-click="save()" ng-show="!post.published" class="ui red button">Save</button>
+  <button ng-click="save(true)" class="ui blue button">
+    <span ng-show="!post.published">Publish</span>
+    <span ng-show="post.published">Update</span>
+  </button>
+</div>
+
+<div class="six wide column">
+  <div class="ui form segment">
+    <div class="field">
+      <textarea ng-model="post.message" placeholder="Message"></textarea>
+    </div>
+    <div class="field">
+      <label>Network</label>
+      <ui-select ng-model="post.network" theme="selectize">
+        <ui-select-match placeholder="Select Network">{{ $select.selected }}</ui-select-match>
+        <ui-select-choices repeat="network in networks"><span ng-bind="network"></span></ui-select-choices>
+      </ui-select>
+    </div>
+      <div class="field">
+        <label>Post Type</label>
+        <ui-select ng-model="post.type" theme="selectize">
+          <ui-select-match placeholder="Select Post Type">{{ $select.selected }}</ui-select-match>
+          <ui-select-choices repeat="postType in postTypes"><span ng-bind="postType"></span></ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="field" ng-show="isPhotoType()">
+        <button class="ui red button" dropzone="dropzoneConfig">Upload File
+          <p class="preview"></p>
+        </button>
+      </div>
+      <div class="field">
+        <label>Tags</label>
+        <ui-select ng-model="post.tags" multiple>
+          <ui-select-match placeholder="Look for a tag">{{$item}}</ui-select-match>
+          <ui-select-choices repeat="tag in tags">
+            <div><span ng-bind-html="tag | highlight: $select.search"></span></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="field">
+        <label>Countries</label>
+        <ui-select ng-model="post.countries" multiple>
+          <ui-select-match placeholder="Look for a country">{{$item}}</ui-select-match>
+          <ui-select-choices repeat="country in countries">
+            <div><span ng-bind-html="country | highlight: $select.search"></span></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="field">
+        <label>Languages</label>
+        <ui-select ng-model="post.languages" multiple>
+          <ui-select-match placeholder="Look for a language">{{$item}}</ui-select-match>
+          <ui-select-choices repeat="language in languages">
+            <div><span ng-bind-html="language | highlight: $select.search"></span></div>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+  </div>
+</div>
+
+<div class="six wide column">
+  <div class="ui card" ng-show="post">
+    <div class="image dimmable">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <button class="ui inverted button" ui-sref="post.edit({id:post.id})">Edit Publication</button>
+          </div>
+        </div>
+      </div>
+      <img ng-show="isPhotoType()" src="{{post.image}}">
+    </div>
+    <div class="content">
+      <h3 class="header">{{post.message}}</h3>
+      <div class="meta">
+        <a class="group">{{post.network}}</a>
+      </div>
+      <p class="description">
+        <span ng-repeat="tag in post.tags">{{tag}} </span>
+      </p>
+    </div>
+  </div>
+</div>

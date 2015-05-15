@@ -1,0 +1,14 @@
+<div class="centered column row">
+  <button ng-click="toggle()" ng-disabled="isFormRendered" class="ui blue button">
+    Add New Data Point
+  </button>
+  <button ui-sref="home" class="ui red button">Back to Home</button>
+</div>
+
+<div class="three wide column">
+  <div ng-include="'/app/reach/reach-edit.html'" ng-show="isFormRendered"></div>
+</div>
+
+<div class="column">
+  <stackedbar values="reach"/>
+</div>
