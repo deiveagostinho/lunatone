@@ -20,9 +20,9 @@ var templateUrl = R.curry(function (path, file) {
   return path + file
 })
 
-var templateApp = templateUrl('')
-var templatePost = templateUrl('post/')
-var templateReach = templateUrl('reach/')
+var templateApp = templateUrl('/lunatone/')
+var templatePost = templateUrl('/lunatone/post/')
+var templateReach = templateUrl('/lunatone/reach/')
 
 
 // Socket Emission Helper
