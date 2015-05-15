@@ -10,7 +10,7 @@ angular
   ])
 
   .config(function (RestangularProvider) {
-    RestangularProvider.setBaseUrl('http://lunatone.herokuapp.com/api')
+    RestangularProvider.setBaseUrl('http://lunatone.herokuapp.com/')
   })
 
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
