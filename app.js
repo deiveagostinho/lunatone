@@ -1,31 +1,36 @@
-var express       = require('express')
-  , app           = express()
-  , http          = require('http').Server(app)
-  , io            = require('socket.io')(http)
-  , routes        = require('./server/routes')
+angular
 
-require('./server/socket')(io)
+  .module('lunatone', [
+    'ngResource',
+    'ngSanitize',
+    'restangular',
+    'btford.socket-io',
+    'ui.router',
+    'ui.select'
+  ])
 
-app.set('port', process.env.PORT || 3000)
-app.use(routes)
-app.use('/app', express.static('client/src'))
-app.use('/bower', express.static('client/bower_components'))
-
-app.get('*', function (req, res) {
-  var options = {
-    root: __dirname + '/client/src/',
-    dotfiles: 'deny',
-    headers: {
-        'x-timestamp': Date.now(),
-        'x-sent': true
-    }
-  }
-
-  return res.sendFile('index.html', options, function (err) {
-    if (err) {
-      res.status(err.status).end();
-    }
+  .config(function (RestangularProvider) {
+    RestangularProvider.setBaseUrl('http://lunatone.herokuapp.com/api')
   })
-})
 
-http.listen(3000)
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+      $urlRouterProvider.otherwise('/')
+      $stateProvider
+        .state('home', {
+          url: '/',
+          templateUrl: templateApp('app.html'),
+          controller: 'AppCtrl'
+        })
+        
+      if(window.history && window.history.pushState){
+        $locationProvider.html5Mode({
+          enabled: true,
+          requireBase: false
+        })
+      }
+  }])
+  
+  .controller('AppCtrl', function($scope){
+    
+  })
