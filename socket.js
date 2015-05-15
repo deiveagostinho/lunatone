@@ -1,8 +1,6 @@
 module.exports = function (io) {
-  io.configure(function() {
-    io.set('transports', ['xhr-polling'])
-    io.set('polling duration', 10)
-  })
+  io.set('transports', ['xhr-polling'])
+  io.set('polling duration', 10)
 
   io.on('connection', function(socket){
     socket.on('post:create', function(post){
