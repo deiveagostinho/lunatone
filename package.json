@@ -4,7 +4,8 @@
   "description": "example app using node.js, angular, socketio and d3.",
   "main": "app.js",
   "scripts": {
-    "build:css": "lessc less/app.less --semantic-ui > src/css/app.css"
+    "build:css": "lessc client/less/app.less --semantic-ui > client/src/css/app.css",
+    "min:css": "cleancss -o client/src/css/app.min.css client/src/css/app.css --s0"
   },
   "author": "Ju Gonçalves <code@jugoncalv.es>",
   "license": "MIT",

@@ -39443,29 +39443,6 @@ ul {
   list-style-type: none;
   margin: 0;
 }
-.ui.grid > .row > .blue.column,
-.ui.blue.button,
-.ui.blue.labels .label,
-.ui.blue.label {
-  background-color: #28a4d1 !important;
-}
-.ui.grid > .row > .red.column,
-.ui.red.button,
-.ui.red.labels .label,
-.ui.red.label {
-  background-color: #e33569 !important;
-}
-.ui.button {
-  margin-bottom: 10px;
-}
-.ui.card {
-  display: inline-block;
-}
-.ui.error.message .header,
-.ui.error.message {
-  background-color: #FCFFE8;
-  color: #e33569;
-}
 .lunatone-app {
   height: calc(100%);
 }
@@ -39500,6 +39477,29 @@ ul {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
+}
+.ui.grid > .row > .blue.column,
+.ui.blue.button,
+.ui.blue.labels .label,
+.ui.blue.label {
+  background-color: #28a4d1 !important;
+}
+.ui.grid > .row > .red.column,
+.ui.red.button,
+.ui.red.labels .label,
+.ui.red.label {
+  background-color: #e33569 !important;
+}
+.ui.button {
+  margin-bottom: 10px;
+}
+.ui.card {
+  display: inline-block;
+}
+.ui.error.message .header,
+.ui.error.message {
+  background-color: #FCFFE8;
+  color: #e33569;
 }
 .ui.card {
   min-height: 431px;
@@ -39587,17 +39587,4 @@ a.ui-select-choices-row-inner:hover {
 .ui-select-bootstrap .ui-select-choices-row > a:hover,
 .ui-select-bootstrap .ui-select-choices-row.active > a:hover {
   background-color: none;
-}
-.deckgrid[deckgrid]::before {
-  /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
-  content: '4 .column.column-1-4';
-  font-size: 0;
-  /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
-  visibility: hidden;
-}
-.deckgrid .column {
-  float: left;
-}
-.deckgrid .column-1-4 {
-  width: 25%;
 }
