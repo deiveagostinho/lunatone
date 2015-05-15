@@ -8,8 +8,8 @@ var maybeRespond = R.curry(function (errorMessage, status, error, object) {
 
 var endpoint = function (param) {
   return param ?
-      '/api/' + param
-    : '/api'
+      '/' + param
+    : '/'
 }
 
 module.exports = {
