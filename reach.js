@@ -2,7 +2,7 @@ var save            = require('save')
   , R               = require('ramda')
   , utils           = require('./utils')
   , maybeRespond    = utils.maybeRespond
-  , data            = require('../data/reach.json')
+  , data            = require('data/reach.json')
 
 var Reach = save('Reach', {idProperty: 'id'})
 

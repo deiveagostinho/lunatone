@@ -12,7 +12,7 @@ app.use(multer())
 
 var Post    = require('./post')
   , Reach   = require('./reach')
-  , version = require('../package.json').version
+  , version = require('./package.json').version
 
 app.get(endpoint(), function (req, res) {
   return res.json({version: version})

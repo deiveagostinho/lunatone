@@ -1,4 +1,6 @@
 module.exports = function (io) {
+  io.set("transports", ["xhr-polling"])
+
   io.on('connection', function(socket){
     socket.on('post:create', function(post){
       socket.broadcast.emit('posts:update', post)

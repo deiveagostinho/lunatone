@@ -1,31 +1,13 @@
 var express       = require('express')
   , app           = express()
+  , cors          = require('cors')
   , http          = require('http').Server(app)
   , io            = require('socket.io')(http)
-  , routes        = require('./server/routes')
+  , routes        = require('./routes')
 
-require('./server/socket')(io)
-
+require('./socket')(io)
+app.use(cors())
 app.set('port', process.env.PORT || 3000)
 app.use(routes)
-app.use('/app', express.static('client/src'))
-app.use('/bower', express.static('client/bower_components'))
-
-app.get('*', function (req, res) {
-  var options = {
-    root: __dirname + '/client/src/',
-    dotfiles: 'deny',
-    headers: {
-        'x-timestamp': Date.now(),
-        'x-sent': true
-    }
-  }
-
-  return res.sendFile('index.html', options, function (err) {
-    if (err) {
-      res.status(err.status).end();
-    }
-  })
-})
 
 http.listen(3000)
