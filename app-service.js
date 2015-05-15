@@ -32,5 +32,7 @@ angular
   }])
 
   .factory('Socket', function (socketFactory) {
-    return socketFactory()
+    return socketFactory({
+      ioSocket: io.connect('https://lunatone.herokuapp.com/')
+    })
   })

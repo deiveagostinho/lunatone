@@ -100,7 +100,7 @@ angular
       $stateProvider
       .state('post', {
         abstract: true,
-        url: '/posts',
+        url: '/lunatone/posts',
         templateUrl: templatePost('post.html')
       })
 

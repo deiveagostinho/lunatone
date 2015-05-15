@@ -32,7 +32,7 @@ angular
       $stateProvider
       .state('reach', {
         abstract: true,
-        url: '/statistics',
+        url: '/lunatone/statistics',
         templateUrl: templateReach('reach.html')
       })
 
