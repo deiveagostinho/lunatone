@@ -10,4 +10,4 @@ app.use(cors())
 app.set('port', (process.env.PORT || 3000))
 app.use(routes)
 
-http.listen(3000)
+app.listen(app.get('port'))
